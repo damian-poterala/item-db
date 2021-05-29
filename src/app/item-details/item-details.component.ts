@@ -10,6 +10,8 @@ import { ItemsResourceService } from '../services/items-resource.service';
 export class ItemDetailsComponent implements OnInit {
   @Input() dataObj: any;
 
+  itemDetails : any = [];
+
   constructor(
     private itemsResourceService : ItemsResourceService,
   ) { }
@@ -20,7 +22,8 @@ export class ItemDetailsComponent implements OnInit {
 
   getHelperItemDetails(id: number) {
     this.itemsResourceService.getItemDetails(id).subscribe((data: any) => {
-      console.log("%c Item details: ", "color: #338333", data);
+      this.itemDetails = data;
+      console.log("%c Item details: ", "color: #338333", this.itemDetails);
     });
   }
 

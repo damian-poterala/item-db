@@ -71,7 +71,7 @@
     </div>
 </p-panel>
 
-<p-dialog header="Szczegóły dodanego przedmiotu" [(visible)]="showModalItemDetails" (onHide)="closeModalItemDetails()" [style]="{ width: '80vw' }" [modal]="true">
+<p-dialog header="Szczegóły dodanego przedmiotu" [(visible)]="showModalItemDetails" (onHide)="closeModalItemDetails()" [style]="{ width: '50vw' }" [modal]="true">
     <app-item-details [dataObj]="dataObjDetails" *ngIf="showModalItemDetails == true"></app-item-details>
 </p-dialog>
 
