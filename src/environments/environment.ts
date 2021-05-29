@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  itemsUrl  : 'http://localhost/item_db_application/events/items',
+  helperUrl : 'http://localhost/item_db_application',
 };
 
 /*
