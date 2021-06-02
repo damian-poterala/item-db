@@ -1,1 +1,81 @@
 <p>create-item works!</p>
+<div class="p-grid">
+    <div class="p-col-12">
+        <form [formGroup]="createItemForm">
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="itemName" class="label-style">Nazwa przedmiotu:</label>
+                    <input pInputText formControlName="itemName" type="text" id="itemName" class="p-inputtext-sm">
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="category" class="label-style">Kategoria:</label>
+                    <p-dropdown formControlName="category" [options]="categoriesList" optionLabel="name_pl" placeholder="Wybierz" id="category" class="p-inputtext-sm" appendTo="body"></p-dropdown>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="dayPremiere" class="label-style">Dzień premiery:</label>
+                    <p-calendar formControlName="dayPremiere" id="dayPremiere" class="p-inputtext-sm" appendTo="body"></p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="priceDayPremiere" class="label-style">Cena w dniu premiery:</label>
+                    <p-inputNumber formControlName="priceDayPremiere" id="priceDayPremiere" class="p-inputtext-sm"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="numberOfItem" class="label-style">Ilość posiadanych przedmiotów:</label>
+                    <p-inputNumber formControlName="numberOfItem" id="numberOfItem" class="p-inputtext-sm"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="purchasePriceOneQuantity" class="label-style">Cena za ile został kupiony przedmiot (sztuka): </label>
+                    <p-inputNumber formControlName="purchasePriceOneQuantity" id="purchasePriceOneQuantity" class="p-inputtext-sm"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="sumPurchasingItem" class="label-style">Suma za ile został kupiony przedmiot:</label>
+                    <p-inputNumber formControlName="sumPurchasingItem" id="sumPurchasingItem" class="p-inputtext-sm"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="currentPrice" class="label-style">Aktualna cena przedmiotu:</label>
+                    <p-inputNumber formControlName="currentPrice" id="currentPrice" class="p-inputtext-sm"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="buyingQuality" class="label-style">Stan zakupionego przedmiotu:</label>
+                    <p-dropdown formControlName="buyingQuality" [options]="qualityCategories" optionLabel="name_pl" placeholder="Wybierz" id="buyingQuality" class="p-inputtext-sm" appendTo="body"></p-dropdown>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="currencyQuality" class="label-style">Aktualny stan przedmiotu:</label>
+                    <p-dropdown formControlName="currencyQuality" [options]="qualityCategories" optionLabel="name_pl" placeholder="Wybierz" id="currencyQuality" class="p-inputtext-sm" appendTo="body"></p-dropdown>
+                </div>
+                <div class="p-field p-col-12 p-md-9">
+                    <label for="boughtIn" class="label-style">Kupiono w:</label>
+                    <input pInputText formControlName="boughtIn" type="text" id="boughtIn" class="p-inputtext-sm">
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="dateOfIssue" class="label-style">Data wystawienia przedmiotu:</label>
+                    <p-calendar formControlName="dateOfIssue" id="dateOfIssue" class="p-inputtext-sm" appendTo="body"></p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="currentNumberItemOnDisplay" class="label-style">Aktualna ilość wystawionych przedmiotów:</label>
+                    <p-inputNumber formControlName="currentNumberItemOnDisplay" id="currentNumberItemOnDisplay" class="p-inputtext-sm"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="currentNumberItemSold" class="label-style">Aktualna ilość sprzedanych przedmiotów:</label>
+                    <p-inputNumber formControlName="currentNumberItemSold" id="currentNumberItemSold" class="p-inputtext-sm"></p-inputNumber>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="purchaseCurrency" class="label-style">Waluta za jaką został kupiony przedmiot:</label>
+                    <p-dropdown formControlName="purchaseCurrency" [options]="currencyList" optionLabel="name" placeholder="Wybierz" id="purchaseCurrency" class="p-inputtext-sm" appendTo="body"></p-dropdown>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="sellingCurrency" class="label-style">Waluta w jakiej jest sprzedawany przedmiot:</label>
+                    <p-dropdown formControlName="sellingCurrency" [options]="currencyList" optionLabel="name" placeholder="Wybierz" id="sellingCurrency" class="p-inputtext-sm" appendTo="body"></p-dropdown>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="expirationDate" class="label-style">Data wazność aukcji:</label>
+                    <p-calendar formControlName="expirationDate" id="expirationDate" class="p-inputtext-sm" appendTo="body"></p-calendar>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="active" class="label-style">Czy aktywna aukcja:</label>
+                    <p-dropdown formControlName="active" placeholder="Wybierz" id="active" class="p-inputtext-sm" appendTo="body"></p-dropdown>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

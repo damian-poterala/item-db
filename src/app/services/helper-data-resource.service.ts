@@ -21,4 +21,8 @@ export class HelperDataResourceService {
     getQualityCategories(): Observable<Object> {
         return this.http.get(`${ environment.helperUrl }/events/quality-items/quality-items-list.php`);
     }
+
+    getCurrencyList(): Observable<Object> {
+        return this.http.get(`${ environment.helperUrl }/events/currency/currency-list.php`);
+    }
 }
