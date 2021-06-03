@@ -12,7 +12,7 @@
                 </div>
                 <div class="p-field p-col-12 p-md-6">
                     <label for="dayPremiere" class="label-style">Dzień premiery:</label>
-                    <p-calendar formControlName="dayPremiere" id="dayPremiere" class="p-inputtext-sm" appendTo="body"></p-calendar>
+                    <p-calendar formControlName="dayPremiere" dateFormat="yy-mm-dd" id="dayPremiere" class="p-inputtext-sm" appendTo="body"></p-calendar>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
                     <label for="priceDayPremiere" class="label-style">Cena w dniu premiery:</label>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="p-field p-col-12 p-md-3">
                     <label for="dateOfIssue" class="label-style">Data wystawienia przedmiotu:</label>
-                    <p-calendar formControlName="dateOfIssue" id="dateOfIssue" class="p-inputtext-sm" appendTo="body"></p-calendar>
+                    <p-calendar formControlName="dateOfIssue" dateFormat="yy-mm-dd" id="dateOfIssue" class="p-inputtext-sm" appendTo="body"></p-calendar>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
                     <label for="currentNumberItemOnDisplay" class="label-style">Aktualna ilość wystawionych przedmiotów:</label>
@@ -68,11 +68,14 @@
                 </div>
                 <div class="p-field p-col-12 p-md-6">
                     <label for="expirationDate" class="label-style">Data wazność aukcji:</label>
-                    <p-calendar formControlName="expirationDate" id="expirationDate" class="p-inputtext-sm" appendTo="body"></p-calendar>
+                    <p-calendar formControlName="expirationDate" dateFormat="yy-mm-dd" id="expirationDate" class="p-inputtext-sm" appendTo="body"></p-calendar>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
                     <label for="active" class="label-style">Czy aktywna aukcja:</label>
                     <p-dropdown formControlName="active" placeholder="Wybierz" id="active" class="p-inputtext-sm" appendTo="body"></p-dropdown>
+                </div>
+                <div class="p-field p-col-12 p-md-2">
+                    <button pButton icon="pi pi-save" label="Zapisz zmiany" class="p-button-sm"></button>
                 </div>
             </div>
         </form>

@@ -1,18 +1,18 @@
-import { BrowserModule }           from '@angular/platform-browser';
-import { NgModule }                from '@angular/core';
-import { HttpClientModule }        from '@angular/common/http';
+import { BrowserModule           } from '@angular/platform-browser';
+import { NgModule                } from '@angular/core';
+import { HttpClientModule        } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule }             from '@angular/forms';
-import { ReactiveFormsModule }     from '@angular/forms';
+import { FormsModule             } from '@angular/forms';
+import { ReactiveFormsModule     } from '@angular/forms';
 
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
-import { TooltipModule } from 'primeng/tooltip';
-import { DropdownModule } from 'primeng/dropdown';
-import { PanelModule } from 'primeng/panel';
-import { DialogModule } from 'primeng/dialog';
-import { InputTextModule } from 'primeng/inputtext';
-import { CalendarModule } from 'primeng/calendar';
+import { TableModule       } from 'primeng/table';
+import { ButtonModule      } from 'primeng/button';
+import { TooltipModule     } from 'primeng/tooltip';
+import { DropdownModule    } from 'primeng/dropdown';
+import { PanelModule       } from 'primeng/panel';
+import { DialogModule      } from 'primeng/dialog';
+import { InputTextModule   } from 'primeng/inputtext';
+import { CalendarModule    } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 
 
