@@ -3,75 +3,75 @@
         <form [formGroup]="editItemForm">
             <div class="p-fluid p-formgrid p-grid">
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="itemName" class="label-style">Nazwa przedmiotu:</label>
+                    <label for="itemName" [ngClass]="{ 'invalid required-star': editItemForm.get('itemName')?.invalid }" class="label-style">Nazwa przedmiotu:</label>
                     <input pInputText formControlName="itemName" type="text" id="itemName" class="p-inputtext-sm">
                 </div>
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="category" class="label-style">Kategoria:</label>
+                    <label for="category" [ngClass]="{ 'invalid required-star': editItemForm.get('category')?.invalid }" class="label-style">Kategoria:</label>
                     <p-dropdown formControlName="category" [options]="categoriesList" optionLabel="name_pl" placeholder="Wybierz" id="category" class="p-inputtext-sm" appendTo="body"></p-dropdown>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="dayPremiere" class="label-style">Dzień premiery:</label>
+                    <label for="dayPremiere" [ngClass]="{ 'invalid required-star': editItemForm.get('dayPremiere')?.invalid }" class="label-style">Dzień premiery:</label>
                     <p-calendar formControlName="dayPremiere" dateFormat="yy-mm-dd" id="dayPremiere" class="p-inputtext-sm" appendTo="body"></p-calendar>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="priceDayPremiere" class="label-style">Cena w dniu premiery:</label>
+                    <label for="priceDayPremiere" [ngClass]="{ 'invalid required-star': editItemForm.get('priceDayPremiere')?.invalid }" class="label-style">Cena w dniu premiery:</label>
                     <p-inputNumber formControlName="priceDayPremiere" id="priceDayPremiere" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="numberOfItem" class="label-style">Ilość posiadanych przedmiotów:</label>
+                    <label for="numberOfItem" [ngClass]="{ 'invalid required-star': editItemForm.get('numberOfItem')?.invalid }" class="label-style">Ilość posiadanych przedmiotów:</label>
                     <p-inputNumber formControlName="numberOfItem" id="numberOfItem" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="purchasePriceOneQuantity" class="label-style">Cena za ile został kupiony przedmiot (sztuka): </label>
+                    <label for="purchasePriceOneQuantity" [ngClass]="{ 'invalid required-star': editItemForm.get('purchasePriceOneQuantitu')?.invalid }" class="label-style">Cena za ile został kupiony przedmiot (sztuka): </label>
                     <p-inputNumber formControlName="purchasePriceOneQuantity" id="purchasePriceOneQuantity" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="sumPurchasingItem" class="label-style">Suma za ile został kupiony przedmiot:</label>
+                    <label for="sumPurchasingItem" [ngClass]="{ 'invalid required-star': editItemForm.get('sumPurchasingItem')?.invalid }" class="label-style">Suma za ile został kupiony przedmiot:</label>
                     <p-inputNumber formControlName="sumPurchasingItem" id="sumPurchasingItem" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="currentPrice" class="label-style">Aktualna cena przedmiotu:</label>
+                    <label for="currentPrice" [ngClass]="{ 'invalid required-star': editItemForm.get('currentPrice')?.invalid }" class="label-style">Aktualna cena przedmiotu:</label>
                     <p-inputNumber formControlName="currentPrice" id="currentPrice" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="buyingQuality" class="label-style">Stan zakupionego przedmiotu:</label>
+                    <label for="buyingQuality" [ngClass]="{ 'invalid required-star': editItemForm.get('buyingQuality')?.invalid }" class="label-style">Stan zakupionego przedmiotu:</label>
                     <p-dropdown formControlName="buyingQuality" [options]="qualityCategories" optionLabel="name_pl" placeholder="Wybierz" id="buyingQuality" class="p-inputtext-sm" appendTo="body"></p-dropdown>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="currencyQuality" class="label-style">Aktualny stan przedmiotu:</label>
+                    <label for="currencyQuality" [ngClass]="{ 'invalid required-star': editItemForm.get('currencyQuality')?.invalid }" class="label-style">Aktualny stan przedmiotu:</label>
                     <p-dropdown formControlName="currencyQuality" [options]="qualityCategories" optionLabel="name_pl" placeholder="Wybierz" id="currencyQuality" class="p-inputtext-sm" appendTo="body"></p-dropdown>
                 </div>
                 <div class="p-field p-col-12 p-md-9">
-                    <label for="boughtIn" class="label-style">Kupiono w:</label>
+                    <label for="boughtIn" [ngClass]="{ 'invalid required-star': editItemForm.get('boughtIn')?.invalid }" class="label-style">Kupiono w:</label>
                     <input pInputText formControlName="boughtIn" type="text" id="boughtIn" class="p-inputtext-sm">
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="dateOfIssue" class="label-style">Data wystawienia przedmiotu:</label>
+                    <label for="dateOfIssue" [ngClass]="{ 'invalid required-star': editItemForm.get('dateOfIssue')?.invalid }" class="label-style">Data wystawienia przedmiotu:</label>
                     <p-calendar formControlName="dateOfIssue" dateFormat="yy-mm-dd" id="dateOfIssue" class="p-inputtext-sm" appendTo="body"></p-calendar>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="currentNumberItemOnDisplay" class="label-style">Aktualna ilość wystawionych przedmiotów:</label>
+                    <label for="currentNumberItemOnDisplay" [ngClass]="{ 'invalid required-star': editItemForm.get('currentNumberItemOnDisplay')?.invalid }" class="label-style">Aktualna ilość wystawionych przedmiotów:</label>
                     <p-inputNumber formControlName="currentNumberItemOnDisplay" id="currentNumberItemOnDisplay" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="currentNumberItemSold" class="label-style">Aktualna ilość sprzedanych przedmiotów:</label>
+                    <label for="currentNumberItemSold" [ngClass]="{ 'invalid required-star': editItemForm.get('currentNumberItemSold')?.invalid  }" class="label-style">Aktualna ilość sprzedanych przedmiotów:</label>
                     <p-inputNumber formControlName="currentNumberItemSold" id="currentNumberItemSold" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="purchaseCurrency" class="label-style">Waluta za jaką został kupiony przedmiot:</label>
+                    <label for="purchaseCurrency" [ngClass]="{ 'invalid required-star': editItemForm.get('purchaseCurrent')?.invalid }" class="label-style">Waluta za jaką został kupiony przedmiot:</label>
                     <p-dropdown formControlName="purchaseCurrency" [options]="currencyList" optionLabel="name" placeholder="Wybierz" id="purchaseCurrency" class="p-inputtext-sm" appendTo="body"></p-dropdown>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="sellingCurrency" class="label-style">Waluta w jakiej jest sprzedawany przedmiot:</label>
+                    <label for="sellingCurrency" [ngClass]="{ 'invalid required-star': editItemForm.get('sellingCurrency')?.invalid }" class="label-style">Waluta w jakiej jest sprzedawany przedmiot:</label>
                     <p-dropdown formControlName="sellingCurrency" [options]="currencyList" optionLabel="name" placeholder="Wybierz" id="sellingCurrency" class="p-inputtext-sm" appendTo="body"></p-dropdown>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="expirationDate" class="label-style">Data wazność aukcji:</label>
+                    <label for="expirationDate" [ngClass]="{ 'invalid required-star': editItemForm.get('expirationDate')?.invalid }" class="label-style">Data wazność aukcji:</label>
                     <p-calendar formControlName="expirationDate" dateFormat="yy-mm-dd" id="expirationDate" class="p-inputtext-sm" appendTo="body"></p-calendar>
                 </div>
                 <div class="p-field p-col-12 p-md-6">
-                    <label for="active" class="label-style">Czy aktywna aukcja:</label>
+                    <label for="active" [ngClass]="{ 'invalid required-star': editItemForm.get('active')?.invalid }" class="label-style">Czy aktywna aukcja:</label>
                     <p-dropdown formControlName="active" placeholder="Wybierz" id="active" class="p-inputtext-sm" appendTo="body"></p-dropdown>
                 </div>
                 <div class="p-field p-col-12 p-md-2">

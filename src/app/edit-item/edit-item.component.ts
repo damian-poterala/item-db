@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup   } from '@angular/forms';
+import { FormControl, FormGroup, Validators   } from '@angular/forms';
 
 import { ItemsResourceService      } from '../services/items-resource.service';
 import { HelperDataResourceService } from '../services/helper-data-resource.service';
@@ -15,24 +15,24 @@ export class EditItemComponent implements OnInit {
   @Input() dataObj: any;
 
   editItemForm: FormGroup = new FormGroup({
-    itemName                   : new FormControl(''),
-    category                   : new FormControl(''),
-    numberOfItem               : new FormControl(''),
-    purchasePriceOneQuantity   : new FormControl(''),
-    sumPurchasingItem          : new FormControl(''),
-    priceDayPremiere           : new FormControl(''),
-    dayPremiere                : new FormControl(''),
-    currentPrice               : new FormControl(''),
-    buyingQuality              : new FormControl(''),
-    currencyQuality            : new FormControl(''),
-    boughtIn                   : new FormControl(''),
-    dateOfIssue                : new FormControl(''),
-    currentNumberItemOnDisplay : new FormControl(''),
-    currentNumberItemSold      : new FormControl(''),
-    purchaseCurrency           : new FormControl(''),
-    sellingCurrency            : new FormControl(''),
-    expirationDate             : new FormControl(''),
-    active                     : new FormControl(''),
+    itemName                   : new FormControl('', [Validators.required]),
+    category                   : new FormControl('', [Validators.required]),
+    numberOfItem               : new FormControl('', [Validators.required]),
+    purchasePriceOneQuantity   : new FormControl('', [Validators.required]),
+    sumPurchasingItem          : new FormControl('', [Validators.required]),
+    priceDayPremiere           : new FormControl('', [Validators.required]),
+    dayPremiere                : new FormControl('', [Validators.required]),
+    currentPrice               : new FormControl('', [Validators.required]),
+    buyingQuality              : new FormControl('', [Validators.required]),
+    currencyQuality            : new FormControl('', [Validators.required]),
+    boughtIn                   : new FormControl('', [Validators.required]),
+    dateOfIssue                : new FormControl('', [Validators.required]),
+    currentNumberItemOnDisplay : new FormControl('', [Validators.required]),
+    currentNumberItemSold      : new FormControl('', [Validators.required]),
+    purchaseCurrency           : new FormControl('', [Validators.required]),
+    sellingCurrency            : new FormControl('', [Validators.required]),
+    expirationDate             : new FormControl('', [Validators.required]),
+    active                     : new FormControl('', [Validators.required]),
   });
 
   itemDetails       : any = [];
