@@ -14,6 +14,11 @@ import { DialogModule      } from 'primeng/dialog';
 import { InputTextModule   } from 'primeng/inputtext';
 import { CalendarModule    } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { MessagesModule    } from 'primeng/messages';
+import { MessageModule     } from 'primeng/message';
+import { ToastModule       } from 'primeng/toast';
+
+import { MessageService } from 'primeng/api';
 
 
 import { AppRoutingModule     } from './app-routing.module';
@@ -50,8 +55,11 @@ import { CreateItemComponent  } from './create-item/create-item.component';
     InputTextModule,
     CalendarModule,
     InputNumberModule,
+    MessagesModule,
+    MessageModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

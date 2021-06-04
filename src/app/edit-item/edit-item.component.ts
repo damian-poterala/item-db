@@ -4,6 +4,8 @@ import { FormControl, FormGroup, Validators   } from '@angular/forms';
 import { ItemsResourceService      } from '../services/items-resource.service';
 import { HelperDataResourceService } from '../services/helper-data-resource.service';
 
+import { MessageService } from 'primeng/api';
+
 import * as moment from 'moment';
 
 @Component({
@@ -43,13 +45,11 @@ export class EditItemComponent implements OnInit {
   constructor(
     private itemsResourceService      : ItemsResourceService,
     private helperDataResourceService : HelperDataResourceService,
+    private messageService            : MessageService,
   ) { }
 
   ngOnInit(): void {
     this.getHelperItemDetails(this.dataObj.itemId);
-    // this.getHelperCategoriesList();
-    // this.getHelperQualityCategories();
-    // this.getHelperCurrencyList();
   }
 
 
@@ -113,6 +113,13 @@ export class EditItemComponent implements OnInit {
       this.editItemForm.get('purchaseCurrency')?.setValue(purchaseCurrency[0]);
       this.editItemForm.get('sellingCurrency')?.setValue(sellingCurrency[0]);
     });
+  }
+
+  savingChanges() {
+    if(this.editItemForm?.invalid) {
+      this.messageService.add({ key: 'error', severity: 'error', summary: 'Błąd danych formularza', detail: 'Uzupełnij poprawnie formularz!' });
+      return;
+    }
   }
 
 }

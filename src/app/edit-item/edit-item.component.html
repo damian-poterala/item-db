@@ -75,9 +75,10 @@
                     <p-dropdown formControlName="active" placeholder="Wybierz" id="active" class="p-inputtext-sm" appendTo="body"></p-dropdown>
                 </div>
                 <div class="p-field p-col-12 p-md-2">
-                    <button pButton icon="pi pi-save" label="Zapisz zmiany" class="p-button-sm"></button>
+                    <button pButton (click)="savingChanges()" icon="pi pi-save" label="Zapisz zmiany" class="p-button-sm"></button>
                 </div>
             </div>
         </form>
     </div>
+    <p-toast key="error"></p-toast>
 </div>
