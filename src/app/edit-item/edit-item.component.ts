@@ -9,9 +9,9 @@ import { MessageService } from 'primeng/api';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'app-edit-item',
-  templateUrl: './edit-item.component.html',
-  styleUrls: ['./edit-item.component.scss']
+  selector    : 'app-edit-item',
+  templateUrl : './edit-item.component.html',
+  styleUrls   : ['./edit-item.component.scss']
 })
 export class EditItemComponent implements OnInit {
   @Input() dataObj: any;
@@ -114,6 +114,28 @@ export class EditItemComponent implements OnInit {
       this.editItemForm.get('sellingCurrency')?.setValue(sellingCurrency[0]);
     });
   }
+
+
+  /** functions for filling in data automatically */
+
+  sumNumberOfItem(value: any) {
+    const numberOfItem = value.value;
+    const purchasePriceOneQuantity = Number(this.editItemForm.get('purchasePriceOneQuantity')?.value);
+
+    const sum = (numberOfItem * purchasePriceOneQuantity);
+    this.editItemForm.get('sumPurchasingItem')?.setValue(sum);
+  }
+
+  sumPurchasePriceOneQuantity(value: any) {
+    const numberOfItem             = Number(this.editItemForm.get('numberOfItem')?.value);
+    const purchasePriceOneQuantity = value.value;
+
+    const sum = (numberOfItem * purchasePriceOneQuantity);
+    this.editItemForm.get('sumPurchasingItem')?.setValue(sum);
+  }
+
+
+  /** events on buttons */
 
   savingChanges() {
     if(this.editItemForm?.invalid) {

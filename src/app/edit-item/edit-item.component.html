@@ -20,11 +20,11 @@
                 </div>
                 <div class="p-field p-col-12 p-md-3">
                     <label for="numberOfItem" [ngClass]="{ 'invalid required-star': editItemForm.get('numberOfItem')?.invalid }" class="label-style">Ilość posiadanych przedmiotów:</label>
-                    <p-inputNumber formControlName="numberOfItem" id="numberOfItem" class="p-inputtext-sm"></p-inputNumber>
+                    <p-inputNumber formControlName="numberOfItem" (onInput)="sumNumberOfItem($event)" id="numberOfItem" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
-                    <label for="purchasePriceOneQuantity" [ngClass]="{ 'invalid required-star': editItemForm.get('purchasePriceOneQuantitu')?.invalid }" class="label-style">Cena za ile został kupiony przedmiot (sztuka): </label>
-                    <p-inputNumber formControlName="purchasePriceOneQuantity" id="purchasePriceOneQuantity" class="p-inputtext-sm"></p-inputNumber>
+                    <label for="purchasePriceOneQuantity" [ngClass]="{ 'invalid required-star': editItemForm.get('purchasePriceOneQuantity')?.invalid }" class="label-style">Cena za ile został kupiony przedmiot (sztuka): </label>
+                    <p-inputNumber formControlName="purchasePriceOneQuantity" (onInput)="sumPurchasePriceOneQuantity($event)" id="purchasePriceOneQuantity" class="p-inputtext-sm"></p-inputNumber>
                 </div>
                 <div class="p-field p-col-12 p-md-3">
                     <label for="sumPurchasingItem" [ngClass]="{ 'invalid required-star': editItemForm.get('sumPurchasingItem')?.invalid }" class="label-style">Suma za ile został kupiony przedmiot:</label>
