@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup   } from '@angular/forms';
+import { FormControl, FormGroup, Validators  } from '@angular/forms';
 
 import { ItemsResourceService      } from '../services/items-resource.service';
 import { HelperDataResourceService } from '../services/helper-data-resource.service';
+
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-create-item',
@@ -11,24 +13,24 @@ import { HelperDataResourceService } from '../services/helper-data-resource.serv
 })
 export class CreateItemComponent implements OnInit {
   createItemForm: FormGroup = new FormGroup({
-    itemName                   : new FormControl(''),
-    category                   : new FormControl(''),
-    numberOfItem               : new FormControl(''),
-    purchasePriceOneQuantity   : new FormControl(''),
-    sumPurchasingItem          : new FormControl(''),
-    priceDayPremiere           : new FormControl(''),
-    dayPremiere                : new FormControl(''),
-    currentPrice               : new FormControl(''),
-    buyingQuality              : new FormControl(''),
-    currencyQuality            : new FormControl(''),
-    boughtIn                   : new FormControl(''),
-    dateOfIssue                : new FormControl(''),
-    currentNumberItemOnDisplay : new FormControl(''),
-    currentNumberItemSold      : new FormControl(''),
-    purchaseCurrency           : new FormControl(''),
-    sellingCurrency            : new FormControl(''),
-    expirationDate             : new FormControl(''),
-    active                     : new FormControl(''),
+    itemName                   : new FormControl('', [ Validators.required ]),
+    category                   : new FormControl('', [ Validators.required ]),
+    numberOfItem               : new FormControl('', [ Validators.required ]),
+    purchasePriceOneQuantity   : new FormControl('', [ Validators.required ]),
+    sumPurchasingItem          : new FormControl('', [ Validators.required ]),
+    priceDayPremiere           : new FormControl('', [ Validators.required ]),
+    dayPremiere                : new FormControl('', [ Validators.required ]),
+    currentPrice               : new FormControl('', [ Validators.required ]),
+    buyingQuality              : new FormControl('', [ Validators.required ]),
+    currencyQuality            : new FormControl('', [ Validators.required ]),
+    boughtIn                   : new FormControl('', [ Validators.required ]),
+    dateOfIssue                : new FormControl('', [ Validators.required ]),
+    currentNumberItemOnDisplay : new FormControl('', [ Validators.required ]),
+    currentNumberItemSold      : new FormControl('', [ Validators.required ]),
+    purchaseCurrency           : new FormControl('', [ Validators.required ]),
+    sellingCurrency            : new FormControl('', [ Validators.required ]),
+    expirationDate             : new FormControl('', [ Validators.required ]),
+    active                     : new FormControl('', [ Validators.required ]),
   });
 
   itemDetails       : any = [];
@@ -39,6 +41,7 @@ export class CreateItemComponent implements OnInit {
   constructor(
     private itemsResourceService      : ItemsResourceService,
     private helperDataResourceService : HelperDataResourceService,
+    private messageService            : MessageService,
   ) { }
 
   ngOnInit(): void {
@@ -69,6 +72,16 @@ export class CreateItemComponent implements OnInit {
       this.currencyList = data["records"];
       console.log("%c Currency list: ", "color: #338333", this.currencyList);
     });
+  }
+
+
+  /** events on buttons */
+
+  save() {
+    if(this.createItemForm?.invalid) {
+      this.messageService.add({ key: 'error', severity: 'error', summary: 'Błąd danych formularza', detail: 'Uzupełnij poprawnie formularz!' });
+      return;
+    }
   }
 
 }

@@ -7,7 +7,7 @@ import { ItemsListComponent } from './items-list/items-list.component';
 const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full'  },
 
-  { path: 'auth'     , component: AuthComponent       },
+  { path: 'auth'      , component: AuthComponent       },
   { path: 'items-list', component: ItemsListComponent },
 ];
 

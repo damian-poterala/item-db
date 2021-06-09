@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit             } from '@angular/core';
 import { FormControl, FormGroup, Validators   } from '@angular/forms';
 
 import { ItemsResourceService      } from '../services/items-resource.service';
